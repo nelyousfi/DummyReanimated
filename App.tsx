@@ -1,11 +1,17 @@
 import React from 'react';
 import {StyleSheet, TouchableOpacity, View, Dimensions} from 'react-native';
+// import Animated, {
+//   Easing,
+//   useAnimatedStyle,
+//   useSharedValue,
+//   withTiming,
+// } from 'react-native-reanimated';
 import Animated, {
   Easing,
   useAnimatedStyle,
   useSharedValue,
   withTiming,
-} from 'react-native-reanimated';
+} from './src';
 
 const config = {
   duration: 500,
