@@ -1,4 +1,4 @@
-import React from 'react';
+import React, {useReducer} from 'react';
 import {StyleSheet, TouchableOpacity, View, Dimensions} from 'react-native';
 // import Animated, {
 //   Easing,
@@ -28,11 +28,14 @@ export default function App() {
     };
   });
 
+  const [, rerender] = useReducer(x => x + 1, 0);
+
   return (
     <View style={styles.container}>
       <TouchableOpacity
         onPress={() => {
           randomWidth.value = Math.random() * Dimensions.get('window').width;
+          rerender();
         }}>
         <Animated.View style={[styles.box, style]} />
       </TouchableOpacity>

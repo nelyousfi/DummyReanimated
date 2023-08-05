@@ -1,3 +1,4 @@
+import {useRef} from 'react';
 import {View, ViewStyle} from 'react-native';
 
 const Animated = {
@@ -27,9 +28,8 @@ const useAnimatedStyle = (fun: () => ViewStyle): ViewStyle => {
 };
 
 const useSharedValue = (value: number): {value: number} => {
-  return {
-    value,
-  };
+  const ref = useRef({value});
+  return ref.current;
 };
 
 const withTiming = (value: number, _config: Config): number => {
